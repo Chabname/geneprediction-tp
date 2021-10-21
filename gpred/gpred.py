@@ -210,8 +210,15 @@ def main():
                 stop_regex, shine_regex, args.min_gene_len, 
                 args.max_shine_dalgarno_distance, args.min_gap)
 
+    for i, gene in enumerate(reverse_genes_list):
+        gene = [len(sequence) - (gene[1] +1), len(sequence) - (gene[0] +1)]
+        reverse_genes_list[i] = gene
+
+    all_genes = genes_list
+    all_genes += genes_list
+    
     # Call to output functions
-    write_genes_pos(args.predicted_genes_file, genes_list)
+    write_genes_pos(args.predicted_genes_file, all_genes)
     write_genes(args.fasta_file, sequence, genes_list, sequence_rc, reverse_genes_list)
 
 
