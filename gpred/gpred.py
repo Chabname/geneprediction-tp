@@ -215,7 +215,7 @@ def main():
         reverse_genes_list[i] = gene
 
     all_genes = genes_list
-    all_genes += genes_list
+    all_genes += reverse_genes_list
     
     # Call to output functions
     write_genes_pos(args.predicted_genes_file, all_genes)
